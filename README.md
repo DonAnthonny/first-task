@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Service Request API Documentation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 2rem;
-      max-width: 900px;
-    }
-    pre {
-      background-color: #f4f4f4;
-      padding: 1rem;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: Consolas, monospace;
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    hr {
-      margin: 2rem 0;
-    }
-  </style>
-</head>
+
 <body>
 
   <h1>Service Request API</h1>
