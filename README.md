@@ -58,7 +58,7 @@
   <hr />
 
   <h3>3. Get Nearby Active Providers</h3>
-  <p><strong>GET</strong> <code>/api/providers/nearby?lat=35.7021&lng=51.4031</code></p>
+  <p><strong>GET</strong> <code>/api/provider/nearby?lat=35.7021&lng=51.4031</code></p>
 
   <p><strong>Response example:</strong></p>
   <pre><code>{
