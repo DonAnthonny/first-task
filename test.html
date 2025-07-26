@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebSocket Test</title>
+  </head>
+  <body>
+    <h2>WebSocket Test</h2>
+    <button onclick="register()">🔔 Register Provider</button>
+    <button onclick="sendRequest()">📦 Send Service Request</button>
+    <pre id="log"></pre>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script>
+      const log = (msg) => {
+        document.getElementById("log").textContent += msg + "\n";
+      };
+
+      const socket = io("http://localhost:5000");
+
+      socket.on("connect", () => {
+        log("✅ Connected to WebSocket server");
+      });
+
+      socket.on("disconnect", () => {
+        log("❌ Disconnected from WebSocket server");
+      });
+
+      socket.on("notify_new_request", (data) => {
+        log("📢 New Request Near You: " + JSON.stringify(data));
+      });
+
+      function register() {
+        socket.emit("register_provider", {
+          id: "provider123",
+          lat: 35.7,
+          lng: 51.4,
+        });
+        log("🟢 Provider registered");
+      }
+
+      function sendRequest() {
+        socket.emit("new_service_request", {
+          lat: 35.7001,
+          lng: 51.4001,
+        });
+        log("📨 Sent service request");
+      }
+    </script>
+  </body>
+</html>
